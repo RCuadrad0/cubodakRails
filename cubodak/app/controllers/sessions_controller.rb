@@ -7,10 +7,10 @@ class SessionsController < ApplicationController
         @user = User.find_by(username: params[:username])
         if !!@user && @user.authenticate(params[:password])
             session[:user_id] = @user.id
-            redirect_to root_path
+            render json: {"msg": "Bienvenid- %s" %[@user.name], "status":200}
         else
             message = "Usuario o contraseña erronea"
-            redirect_to auth_signin_path, notice: message
+            render json: {"msg": message}
         end
     end
 

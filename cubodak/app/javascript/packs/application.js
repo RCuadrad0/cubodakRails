@@ -9,7 +9,8 @@ import * as ActiveStorage from "@rails/activestorage";
 import "channels";
 import "bootstrap/dist/js/bootstrap";
 import "bootstrap/dist/css/bootstrap";
-require("packs/sign");
+require("packs/signup");
+require("packs/signin");
 require("jquery");
 
 Rails.start();
