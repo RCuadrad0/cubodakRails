@@ -9,8 +9,25 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+ <nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <a class="navbar-brand" href="/"><%= zondicon('logo', class: 'logo') %></a>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <span class="icon-menu"></span>
+      </ul>
 
+      <a href="/auth/signup" class="link">
+        <%= zondicon('usuario', class: 'logo') %>
+      </a>
+      <a>
+      <%= zondicon('carrito', class: 'logo') %>
+      </a>
+    </div>
+  </div>
+</nav>
   <body>
+
     <%= yield %>
   </body>
 </html>

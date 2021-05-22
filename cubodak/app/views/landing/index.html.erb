@@ -1,1 +1,61 @@
-<h1>Holitas</h1>
+<body class="index-body">
+  <main role="main">
+    <section class="jumbotron banner">
+      <div class="banner-header">
+        <div class="container-img">
+          <%=image_tag("banner-img.png")%>
+          <a class="btn-design">Diseños</a>
+        </div>
+        <div class="contanier-header-text">
+          <h1 class="heading">UN PUNTO DE ENCUENTRO, ENTRE DISEÑADORES Y</h1>
+          <h1 class="heading2">USUARIOS</h1>
+          <p class="sub-heading">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+            sit amet massa in arcu interdum euismod. Suspendisse id augue
+            pretium velit lacinia commodo. Mauris at nulla nec sapien
+            dignissim ultrices.
+          </p>
+
+          <p>
+            <a href="signup.html" class="btn btn-primary my-2">Registarse</a>
+            <a href="signin.html" class="btn btn-secondary my-2">Ingresar</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="album py-5">
+      <div class="text-center filters-container">
+        <select>
+          <option value="">Filtro 1</option>
+        </select>
+        <select>
+          <option value="">Filtro 2</option>
+        </select>
+        <select>
+          <option value="">Filtro 3</option>
+        </select>
+        <select>
+          <option value="">Filtro 4</option>
+        </select>
+        <span class="icon-Lupa"><span class="path1"></span><span class="path2"></span></span>
+      </div>
+      <div class="container">
+        <div class="row" id="container-album"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Back to top</a>
+      </p>
+    </div>
+  </footer>
+  <div class="loading" id="loading-balls">
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+  </div>
+</body>
