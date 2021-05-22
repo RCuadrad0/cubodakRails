@@ -1,0 +1,7 @@
+<h2>New user<h2>
+<%= form_for( @user , remote: true) do |f| %>
+<%= f.text_field :username %>
+<%= f.password_field :password %>
+<%= f.email_field :email %>
+<%= f.submit "Crear"%>
+<% end %>

@@ -1,0 +1,13 @@
+<div>
+<% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
+<h2>Login</h2>
+<%= form_tag( '/auth/signin' , remote: true) do |f| %>
+    username: <%= text_field_tag (:username) %>
+    password: <%= password_field_tag (:password) %>
+    <%=submit_tag "Ingresar"%>
+<% end %>
+</div>
