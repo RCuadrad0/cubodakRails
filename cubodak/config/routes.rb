@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   get '/auth/siginout', to: 'sessions#destroy'
   get '/auth/signup', to: 'users#new'
   post '/auth/signup', to: 'users#create'
-
+  get '/auth/googleLogin', to: redirect("/auth/google_oauth2")
+  get "/auth/google_oauth2/callback", to: "sessions#GoogleAuth"
 end
