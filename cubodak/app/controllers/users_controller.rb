@@ -5,10 +5,15 @@ class UsersController < ApplicationController
     end
 
     def create
+        u = User.where(username: params[:user][:username]).or(User.where(email: params[:user][:email])).exists?
+        if u
+            render json: {"msg" => "Usuario o correo ya registrado, prueba con uno distinto."}
+            return
+        end
         @user = User.new(user_params)
         if @user.save
             session[:user_id] = @user.id
-            redirect_to root_path
+            render json: { "msg" => "Usuario creado exitosamente", "status" => 200}
         else
             render :new
         end
@@ -20,6 +25,6 @@ class UsersController < ApplicationController
 
     private
     def user_params
-        params.require(:user).permit(:username, :password, :email)
+        params.require(:user).permit(:username, :password, :email, :terms)
     end
 end

@@ -2,7 +2,7 @@
 <body class="text-center">
     <main class="signin-form">
         <h3>Crea tu cuenta CUBODAK</h3>
-        <form id="signinForm" action="/auth/signup" method="post">
+        <form id="signinForm">
             <div class="form-floating">
                 <input type="email" name="email" class="form-control" id="emailRegister" placeholder="email" />
                 <label for="emailRegister">Correo Electrónico</label>
@@ -26,7 +26,7 @@
                 <a href="termsofuse.html">terminos y condiciones de uso</a>
             </div>
             <span id="feedbackError" class="error-feedback mb-3"></span>
-            <button id="sendSignup" class="btn btn-outline-primary btn-large" type="submit">
+            <button id="sendSignup" class="btn btn-outline-primary btn-large" type="button" onclick="window.sendSignUp();">
                 Registrarse
             </button>
         </form>
