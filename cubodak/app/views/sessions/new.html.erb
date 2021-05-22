@@ -1,13 +1,27 @@
-<div>
+
 <% flash.each do |type, msg| %>
   <div>
     <%= msg %>
   </div>
 <% end %>
-<h2>Login</h2>
-<%= form_tag( '/auth/signin' , remote: true) do |f| %>
-    username: <%= text_field_tag (:username) %>
-    password: <%= password_field_tag (:password) %>
-    <%=submit_tag "Ingresar"%>
-<% end %>
-</div>
+
+<body class="text-center">
+  <div id="navbar-placeholder"></div>
+    <main class="signin-form"> 
+      <span id="alert-sigin"></span>
+        <h3 class="mb-3">Ingresar</h3>
+        <form id="signinForm" action="/auth/signin" method="post">
+            <div class="form-floating ">
+                <input class="form-control" id="usernameInput" placeholder="Usuario">
+                <label for="usernameInput">Usuario</label>
+              </div>
+              <div class="form-floating">
+                <input type="password" class="form-control" id="passwordInput" placeholder="Password">
+                <label for="passwordInput">Contraseña</label>
+              </div>
+            <button id="sendSignin" class="btn btn-outline-primary btn-large" type="submit">Ingresar</button>
+        </form>
+        <p>¿No tienes una cuenta? <a href="signup.html">Crea una</a></p>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    </main>
+</body>
