@@ -18,6 +18,15 @@ class UsersController < ApplicationController
             render :new
         end
     end
+    def upload
+    end
+
+    def upload_product
+        product = @current_user.products.create(product_params)
+        if product.save
+            redirect_to product, notice:"producto creado correctamente"
+        end
+    end
 
     def show
         @user = User.find(params[:id])
@@ -26,5 +35,8 @@ class UsersController < ApplicationController
     private
     def user_params
         params.require(:user).permit(:username, :password, :email, :terms)
+    end
+    def product_params
+        params.require(:product).permit(:name, :price, :description)
     end
 end

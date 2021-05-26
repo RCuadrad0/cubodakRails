@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   post '/auth/signup', to: 'users#create'
   get '/auth/googleLogin', to: redirect("/auth/google_oauth2")
   get "/auth/google_oauth2/callback", to: "sessions#GoogleAuth"
+  get "/upload_product", to: 'users#upload'
+  post "/upload_product", to: 'users#upload_product'
 end
