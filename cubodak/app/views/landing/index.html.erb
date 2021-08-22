@@ -1,1 +1,6 @@
-<h1>Holitas</h1>
+<%if logged_in?%>
+    <h1>Holitas <%=current_user.name%></h1>
+    <%=current_user.email%>
+    <img src=<%=current_user.image%> alt="Girl in a jacket" width="500" height="600">
+    <a href="/auth/siginout">Salir</a>
+<%end%>
