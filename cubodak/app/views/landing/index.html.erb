@@ -1,6 +1,64 @@
-<%if logged_in?%>
-    <h1>Holitas <%=current_user.name%></h1>
-    <%=current_user.email%>
-    <img src=<%=current_user.image%> alt="Girl in a jacket" width="500" height="600">
-    <a href="/auth/siginout">Salir</a>
-<%end%>
+<main role="main">
+  <section class="jumbotron banner">
+    <div class="banner-header">
+
+      <div class="container-img">
+        <%= image_tag "banner-img.png" %>
+        <a class="btn-design">Diseños</a>
+      </div>
+
+      <div class="contanier-header-text">
+        <h1 class="heading">UN PUNTO DE ENCUENTRO, ENTRE DISEÑADORES Y</h1>
+        <h1 class="heading2">USUARIOS</h1>
+        <p class="sub-heading">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+        sit amet massa in arcu interdum euismod. Suspendisse id augue
+        pretium velit lacinia commodo. Mauris at nulla nec sapien
+        dignissim ultrices.
+        </p>
+        <p>
+          <a href="/auth/signup" class="btn btn-primary my-2">Registarse</a>
+          <a href="/auth/signin" class="btn btn-secondary my-2">Ingresar</a>
+        </p>
+      </div>
+    </div>
+  </section>
+<%aux = true%>
+<%@products.each do |product|%>
+  <%aux = !aux%>
+  <div class="container">
+    <div class="row" id="container-album">
+      <div class="col-md-4">
+        <div class="card mb-4 box-shadow">
+          <div class="title-space-<%=aux%>">
+            <p class="name-product"><%=product.name%></p> 
+            <a href="/product/<%=product.id%>" class="btn-sh-cart">Cotizar</a>
+          </div>
+          <%= image_tag product.images[0], class:"card-img-top" %>
+          <div class="card-body">
+            <p class="card-text"> <%=product.description%></p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group"></div>
+              <small class="text-muted"><%=product.final_price%></small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%end%>
+  <button class="btn btn-secondary">Cargar Mas</button>
+</main>
+
+<footer class="text-muted">
+  <div class="container">
+    <p class="float-right">
+    <a href="#">Back to top</a>
+    </p>
+  </div>
+  </footer>
+  <div class="loading" id="loading-balls">
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+</div>
