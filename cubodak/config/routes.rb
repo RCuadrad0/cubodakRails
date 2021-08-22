@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   root 'landing#index'
   resources :users
+  resources :product
 
   get '/auth/signin', to: 'sessions#new'
   post '/auth/signin', to: 'sessions#create'
