@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'landing#index'
   resources :users
   resources :products
+  resources :shopping_cart
 
   get '/auth/signin', to: 'sessions#new'
   post '/auth/signin', to: 'sessions#create'
