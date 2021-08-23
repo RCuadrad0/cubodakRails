@@ -255,6 +255,8 @@ figure>div {
 .flex-row-div{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
 }
 .flex-column-div{
     display: flex;
@@ -329,4 +331,55 @@ figure>div {
 
 .carousel-control-next-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%236b6b6a' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+}
+
+.card-title{
+    font-family: 'Delivery';
+    color:#278a8c;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.price{
+    color:#5c5c5c;
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.card-sub-title{
+    font-family: 'codebold';
+    color:#5c5c5c;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.styled-btn{
+    color: white;
+    background-color: #278a8c;
+    border-radius: 8px;
+    margin: 5px 2px;
+    padding: 10px 28px;
+    text-decoration: none;
+}
+.styled-btn:hover{
+    color: white;
+    background-color: #1f6d6e;
+    text-decoration: none;
+    transition: 1s;
+}
+
+.quantity{
+    width: 4rem;
+    margin-left: 0.5rem;
+    border: 1px solid #dadada;
+    background-color: #ebebeb;
+    border-radius: 2px;
+    text-align: center;
+    font-weight: 300;
+    font-family: 'codebold';
+}
+
+.label{
+    font-size: 18px;
+    color:#278a8c;
 }
