@@ -125,6 +125,9 @@ GEM
     jbuilder (2.11.2)
       activesupport (>= 5.0.0)
     jmespath (1.4.0)
+    jquery-turbolinks (2.1.0)
+      railties (>= 3.1.0)
+      turbolinks
     jwt (2.2.3)
     listen (3.5.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
@@ -260,6 +263,9 @@ GEM
     websocket-driver (0.7.3)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    will_paginate (3.3.1)
+    will_paginate-bootstrap4 (0.2.2)
+      will_paginate (~> 3.0, >= 3.0.0)
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.4.2)
@@ -275,6 +281,7 @@ DEPENDENCIES
   byebug
   capybara (>= 3.26)
   jbuilder (~> 2.7)
+  jquery-turbolinks
   listen (~> 3.3)
   omniauth
   omniauth-google-oauth2
@@ -291,6 +298,8 @@ DEPENDENCIES
   web-console (>= 4.1.0)
   webdrivers
   webpacker (~> 5.0)
+  will_paginate
+  will_paginate-bootstrap4
 
 RUBY VERSION
    ruby 3.0.1p64

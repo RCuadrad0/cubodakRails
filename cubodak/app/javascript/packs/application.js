@@ -12,7 +12,6 @@ import "bootstrap/dist/css/bootstrap";
 require("packs/signup");
 require("packs/signin");
 require("jquery");
-
 Rails.start();
 Turbolinks.start();
 ActiveStorage.start();

@@ -23,31 +23,14 @@
       </div>
     </div>
   </section>
-<%aux = true%>
-<%@products.each do |product|%>
-  <%aux = !aux%>
-  <div class="container">
-    <div class="row" id="container-album">
-      <div class="col-md-4">
-        <div class="card mb-4 box-shadow">
-          <div class="title-space-<%=aux%>">
-            <p class="name-product"><%=product.name%></p> 
-            <a href="/product/<%=product.id%>" class="btn-sh-cart">Cotizar</a>
-          </div>
-          <%= image_tag product.images[0], class:"card-img-top" %>
-          <div class="card-body">
-            <p class="card-text"> <%=product.description%></p>
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="btn-group"></div>
-              <small class="text-muted"><%=product.final_price%></small>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+<div class="container">
+  <div class="row" id="container-album">
+    <%=render @products%>
   </div>
-  <%end%>
-  <button class="btn btn-secondary">Cargar Mas</button>
+</div>
+<div>
+<%=will_paginate @products , renderer: WillPaginate::ActionView::BootstrapLinkRenderer, list_classes: %w(pagination justify-content-center) %>
+</div>
 </main>
 
 <footer class="text-muted">

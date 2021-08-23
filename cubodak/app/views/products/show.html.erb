@@ -1,0 +1,100 @@
+
+ <%
+=begin%>
+ <div class="col-md-4">
+    <div class="card mb-4 box-shadow">
+        <div class="title-space">
+            <p class="name-product"><%=@product.name%></p> 
+        </div>
+            <%= image_tag @product.images[0], class:"card-img-top" %>  
+        <div class="card-body">
+            <p class="card-text"> <%=@product.description%></p>
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group"></div>
+                <small class="text-muted"><%=@product.final_price%></small>
+            </div>
+        </div>
+    </div>
+</div> 
+
+ <div data-controller="carousel" class="swiper-container"
+    data-carousel-options-value='{
+    "pagination": { "el": ".swiper-pagination", 
+                    "dynamicBullets": "true" },
+    "navigation": { "nextEl": ".swiper-button-next", 
+                    "prevEl": ".swiper-button-prev"}}'>
+  <div class="swiper-wrapper">
+    <%@product.images.each do |image|%>
+        < class="swiper-slide"><%= image_tag image %></div>
+    <%end%>
+  </div>
+  <div class="swiper-pagination"></div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+</div> 
+<style>
+.swiper-slide {
+    height: 250px;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+  }
+</style>  
+<%
+=end%>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<div class="container py-3">
+  <!-- Card Start -->
+  <div class="card">
+    <div class="row ">
+      <!-- Carousel start -->
+      <div class="col-md-5">
+        <div id="CarouselTest" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#CarouselTest" data-slide-to="0" class="active"></li>
+            <li data-target="#CarouselTest" data-slide-to="1"></li>
+            <li data-target="#CarouselTest" data-slide-to="2"></li>
+
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <%= image_tag @product.images[0], class:"d-block" %>  
+            </div>
+            <div class="carousel-item">
+              <%= image_tag @product.images[1], class:"d-block" %>  
+            </div>
+            <div class="carousel-item">
+              <%= image_tag @product.images[2], class:"d-block" %>  
+            </div>
+            <a class="carousel-control-prev" href="#CarouselTest" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+            <a class="carousel-control-next" href="#CarouselTest" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+          </div>
+        </div>
+      </div>
+      <!-- End of carousel -->
+      <div class="col-md-7 px-3">
+        <div class="card-block px-6">
+          <h4 class="card-title">Horizontal Card with Carousel - Bootstrap 4 </h4>
+          <p class="card-text">
+            The Carousel code can be replaced with an img src, no problem. The added CSS brings shadow to the card and some adjustments to the prev/next buttons and the indicators is rounded now. As in Bootstrap 3
+          </p>
+          <p class="card-text">Made for usage, commonly searched for. Fork, like and use it. Just move the carousel div above the col containing the text for left alignment of images</p>
+          <br>
+          <a href="#" class="mt-auto btn btn-primary  ">Read More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
