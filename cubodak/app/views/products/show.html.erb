@@ -47,24 +47,21 @@
         </div>
         <p class="card-sub-title"><%=@product.name%></p>
           <p class="card-text">
-            The Carousel code can be replaced with an img src, no problem. The added CSS brings shadow to the card and some adjustments to the prev/next buttons and the indicators is rounded now. As in Bootstrap 3
+          <%=@product.description%>
           </p>
-          <p class="card-text">Made for usage, commonly searched for. Fork, like and use it. Just move the carousel div above the col containing the text for left alignment of images</p>
           <br>
-          <form action="/shopping_cart" method="post">
             <div class="flex-row-div" style="justify-content:flex-start;">
               <p class="label">Elige cantidad:</p>
-              <input value =<%=@product.id%> name="product_id" hidden>
-              <input class="quantity" type="number" value="1" name="quantity">
+              <input id="product-id" value =<%=@product.id%> name="product_id" hidden>
+              <input id="product-quantity" class="quantity" type="number" value="1" name="quantity">
             </div>
-            <button class="styled-btn">Agregar</button>
-          </form>
+            <button class="styled-btn" type="button" onClick ="window.addToBag();">Agregar</button>
         </div>
       </div>
     </div>
   </div>
-
-
+  <div class="blurry-div">
+  </div>
 <style>
 body { 
  background-image: url(<%= asset_path 'product.jpeg' %>);

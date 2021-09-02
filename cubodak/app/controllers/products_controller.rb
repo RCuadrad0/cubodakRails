@@ -19,6 +19,16 @@ class ProductsController < ApplicationController
     end
     def show
         @product = Product.find(params[:id])
+        shopping_cart = current_user.shopping_cart
+        if !shopping_cart.nil?
+            @products = ShoppingCartProduct.where(shopping_cart_id: shopping_cart.id)    
+        else
+            @products = nil
+        end
+        @final_price = 0
+        @products.each do |product|
+            @final_price += product.quantity * product.product.final_price.to_i
+        end
     end
 
 end
