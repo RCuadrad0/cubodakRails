@@ -11,8 +11,8 @@ import "bootstrap/dist/js/bootstrap";
 import "bootstrap/dist/css/bootstrap";
 require("packs/signup");
 require("packs/signin");
+require("packs/shoppingCart");
 require("jquery");
-
 Rails.start();
 Turbolinks.start();
 ActiveStorage.start();

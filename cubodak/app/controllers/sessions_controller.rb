@@ -23,7 +23,7 @@ class SessionsController < ApplicationController
             return
         end
         
-        @user = User.new(name: user_info["info"]["name"], email: user_info["info"]["email"], image: user_info["info"]["image"], password_digest: "" )
+        @user = User.new(name: user_info["info"]["name"], email: user_info["info"]["email"], image: user_info["info"]["image"])
         if @user.save
             flash[:notice] = 'Hemos registrado tu usuario!'
             session[:user_id] = @user.id
