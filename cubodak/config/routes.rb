@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   get "/auth/google_oauth2/callback", to: "sessions#GoogleAuth"
   post "/add_to_bag", to: "shopping_cart#add_to_bag"
   get "/checkout", to: "shopping_cart#checkout"
+  get "/get_shopping_cart", to: "shopping_cart#get_shopping_cart"
 end

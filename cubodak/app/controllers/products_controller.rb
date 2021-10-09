@@ -9,7 +9,7 @@ class ProductsController < ApplicationController
     end
 
     def create
-        @product = current_user.products.new(name: params[:name], images: params[:images])
+        @product = current_user.products.new(name: params[:name], images: params[:images], description: params[:description], final_price: params[:final_price])
         if @product.save
             flash[:notice] = "Producto subido correctamente"
             redirect_to @product
